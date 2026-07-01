@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Explorer</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <main >
+        <nav class="nav">
+            <div class="title">Tasks Manager</div>
+            <div class="actions">
+                <div class="theme_toggler">
+                    <span>Light</span>
+                    <input type="checkbox" id="theme_toggler" />
+                </div>
+                <div class="action_btn">
+                    <button class="task_add" onclick="openTaskFrom(event)">Add New Task</button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="main"></section>
+
+        <!-- task form -->
+        <div class="layer">
+            <div class="task_form">
+                <span>Add New Task</span>
+                <form onsubmit="onTaskFormSumbit(event)">
+                    <div class="input_grp">
+                        <label for="title">Task Name: </label>
+                        <input type="text" id="title" />
+                    </div>
+
+                    <div class="input_grp">
+                        <label for="category">Category: </label>
+                        <select name="" id="category">
+                            <option value="Work">Work</option>
+                            <option value="Habit">Habit</option>
+                            <option value="Study">Study</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="add_btn">Add Task</button>
+                    <button type="button" onclick="onCloseTaskFrom(event)" class="add_btn">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+</html>

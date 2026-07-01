@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Hub</title>
+    <link rel="stylesheet" href="/hub.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Central deployment</p>
+          <h1>Task Hub</h1>
+        </div>
+        <a class="primary-link" href="#tasks">View tasks</a>
+      </header>
+
+      <section class="intro">
+        <h2>One Vercel project for every assignment and design.</h2>
+        <p>
+          Add HTML folders, exported React builds, or other static JavaScript tasks
+          to the manifest and deploy this single project.
+        </p>
+      </section>
+
+      <section id="tasks" class="task-list" aria-label="Tasks"></section>
+    </main>
+
+    <script src="/hub.js"></script>
+  </body>
+</html>
