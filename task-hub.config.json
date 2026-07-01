@@ -34,18 +34,6 @@
           "source": "_task-sources/a2/design-3"
         }
       ]
-    },
-    {
-      "title": "A5 - DOM Explorer",
-      "slug": "a5",
-      "description": "Interactive DOM task manager.",
-      "designs": [
-        {
-          "title": "Design 1",
-          "slug": "design-1",
-          "source": "A5 - DOM Explorer"
-        }
-      ]
     }
   ]
 }
