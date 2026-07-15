@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A9 - Productivity Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-light">
+  
+  <div class="background-overlay" id="bg-overlay"></div>
+
+  <div class="app-container">
+    
+    <!-- HEADER WIDGETS (Always visible) -->
+    <header class="app-header">
+      <div class="widget datetime-widget">
+        <h2 id="current-time">00:00</h2>
+        <p id="current-date">Loading...</p>
+      </div>
+
+      <div class="widget weather-widget">
+        <div class="weather-main">
+          <span id="weather-icon">☁️</span>
+          <span id="weather-temp">--°</span>
+        </div>
+        <div class="weather-details">
+          <p id="weather-loc">Fetching Location...</p>
+          <p id="weather-desc" class="weather-small">Loading...</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      
+      <!-- DASHBOARD VIEW -->
+      <section id="view-dashboard" class="view active">
+        <div class="dashboard-grid">
+          
+          <div class="dash-card" data-target="view-todo">
+            <div class="card-icon bg-blue">📋</div>
+            <h3>Todo List</h3>
+            <p>Manage your tasks</p>
+          </div>
+
+          <div class="dash-card" data-target="view-goals">
+            <div class="card-icon bg-green">🎯</div>
+            <h3>Daily Goals</h3>
+            <p>Track your priorities</p>
+            <div class="progress-preview" id="goals-preview">0 / 0 completed</div>
+          </div>
+
+          <div class="dash-card" data-target="view-planner">
+            <div class="card-icon bg-purple">📅</div>
+            <h3>Daily Planner</h3>
+            <p>Schedule your day</p>
+          </div>
+
+          <div class="dash-card" data-target="view-pomodoro">
+            <div class="card-icon bg-red">🍅</div>
+            <h3>Pomodoro Timer</h3>
+            <p>Stay focused</p>
+          </div>
+
+          <div class="dash-card" data-target="view-motivation">
+            <div class="card-icon bg-yellow">✨</div>
+            <h3>Motivation</h3>
+            <p>Get inspired</p>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- TODO LIST FEATURE -->
+      <section id="view-todo" class="view hidden feature-view">
+        <div class="feature-header">
+          <button class="btn-back">← Back to Dashboard</button>
+          <h2>Todo List</h2>
+        </div>
+        <div class="feature-content">
+          <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="What needs to be done?" required>
+            <button type="submit" class="btn-primary">Add Task</button>
+          </form>
+          <ul id="todo-list" class="task-list">
+            <!-- Tasks injected here -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- DAILY GOALS FEATURE -->
+      <section id="view-goals" class="view hidden feature-view">
+        <div class="feature-header">
+          <button class="btn-back">← Back to Dashboard</button>
+          <h2>Daily Goals</h2>
+          <div class="goals-progress">
+            <span id="goals-count-text">0 of 0 completed</span>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" id="goals-progress-bar"></div></div>
+          </div>
+        </div>
+        <div class="feature-content">
+          <form id="goals-form">
+            <input type="text" id="goal-input" placeholder="Set a new goal..." required>
+            <button type="submit" class="btn-primary">Add Goal</button>
+          </form>
+          <ul id="goals-list" class="task-list">
+            <!-- Goals injected here -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- DAILY PLANNER FEATURE -->
+      <section id="view-planner" class="view hidden feature-view">
+        <div class="feature-header">
+          <button class="btn-back">← Back to Dashboard</button>
+          <h2>Daily Planner</h2>
+        </div>
+        <div class="feature-content scrollable">
+          <div id="planner-slots" class="planner-container">
+            <!-- Time slots injected here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- POMODORO TIMER FEATURE -->
+      <section id="view-pomodoro" class="view hidden feature-view">
+        <div class="feature-header">
+          <button class="btn-back">← Back to Dashboard</button>
+          <h2>Pomodoro Timer</h2>
+        </div>
+        <div class="feature-content centered-content">
+          <div class="pomodoro-container">
+            <h3 id="pomo-session-type">Work Session</h3>
+            <div class="timer-display" id="pomo-time">25:00</div>
+            <div class="pomo-controls">
+              <button id="btn-pomo-start" class="btn-primary">Start</button>
+              <button id="btn-pomo-pause" class="btn-secondary">Pause</button>
+              <button id="btn-pomo-reset" class="btn-danger">Reset</button>
+            </div>
+            <div class="pomo-settings">
+              <button id="btn-pomo-work" class="btn-text active">Work (25m)</button>
+              <button id="btn-pomo-break" class="btn-text">Break (5m)</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOTIVATION QUOTE FEATURE -->
+      <section id="view-motivation" class="view hidden feature-view">
+        <div class="feature-header">
+          <button class="btn-back">← Back to Dashboard</button>
+          <h2>Motivation</h2>
+        </div>
+        <div class="feature-content centered-content">
+          <div class="quote-card">
+            <p id="quote-text" class="quote-text">"Loading inspiration..."</p>
+            <p id="quote-author" class="quote-author">-</p>
+            <button id="btn-new-quote" class="btn-primary mt-20">Get New Quote</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
