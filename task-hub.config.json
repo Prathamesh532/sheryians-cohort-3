@@ -58,40 +58,6 @@
       ]
     },
     {
-      "title": "A4 - Assignment Four",
-      "slug": "a4",
-      "description": "React Portfolio and Dashboard designs.",
-      "designs": [
-        {
-          "title": "Design 1",
-          "slug": "design-1",
-          "source": "_task-sources/a4/design-1"
-        },
-        {
-          "title": "Design 2",
-          "slug": "design-2",
-          "source": "_task-sources/a4/design-2"
-        },
-        {
-          "title": "Design 3",
-          "slug": "design-3",
-          "source": "_task-sources/a4/design-3"
-        }
-      ]
-    },
-    {
-      "title": "A5 - Assignment Five",
-      "slug": "a5",
-      "description": "Dribbble-style Masonry Grid Design.",
-      "designs": [
-        {
-          "title": "Design 1",
-          "slug": "design-1",
-          "source": "_task-sources/a5"
-        }
-      ]
-    },
-    {
       "title": "A9 - Productivity Dashboard",
       "slug": "a9",
       "description": "Single-page productivity dashboard with local storage and fetch API.",
